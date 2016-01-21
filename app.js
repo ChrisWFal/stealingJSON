@@ -27,7 +27,7 @@ myApp.controller('mainController', ['$scope', '$http', function ($scope, $http)
                 }]);
 myApp.controller('secondController', ['$scope', '$http', function ($scope, $http) 
     {
-        $http.get('https://api.sandbox.amadeus.com/v1.2/trains/schedule-search?apikey=l912cgcrdidJdVHRdzD9Sp4JmUw7jDta&origin=7171801&departure_date=2016-03-14')
+        $http.get('https://api.sandbox.amadeus.com/v1.2/hotels/search-airport?apikey=l912cgcrdidJdVHRdzD9Sp4JmUw7jDta&location=BOS&check_in=2016-06-14&check_out=2016-06-16')
             .success(function(result)){
                 
                      
