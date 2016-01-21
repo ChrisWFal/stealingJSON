@@ -2,8 +2,7 @@ var myApp = angular.module('myApp', []);
 
 myApp.controller('mainController', ['$scope', '$http', function ($scope, $http)
     {
-        $http.get('http://api.nytimes.com/svc/movies/v2/reviews/search.json?api-key=c9796fd40fb6ade46c14b7f31e958378%3A1%3A74022479
-')
+        $http.get('https://api.sandbox.amadeus.com/v1.2/travel-intelligence/top-destinations?apikey=l912cgcrdidJdVHRdzD9Sp4JmUw7jDta&period=2015-09&origin=BOS')
             .success(function (result) {
                 var counter = 0;
                 $scope.complaints = result;
@@ -16,13 +15,21 @@ myApp.controller('mainController', ['$scope', '$http', function ($scope, $http)
                     var disease = result.data[i][11];
                     //$scope.causeOfDeath.push(disease.substring(0,4));
                     if ($scope.causeOfDeath.push(disease.substring(0, 4)) === "INFL") {
-                        counter ++;
+                        counter++;
                     }
 
                 }
-            console.log(counter);
+                console.log(counter);
             })
             .error(function (data, status) {
                 console.log("Oops...");
             });
-    }]);
+                }]);
+myApp.controller('secondController', ['$scope', '$http', function ($scope, $http) 
+    {
+        $http.get('https://api.sandbox.amadeus.com/v1.2/trains/schedule-search?apikey=l912cgcrdidJdVHRdzD9Sp4JmUw7jDta&origin=7171801&departure_date=2016-03-14')
+            .success(function(result)){
+                
+                     
+                     }
+                 }])
